@@ -1,0 +1,45 @@
+{{ partial "header.html" . }}
+
+<div class="container">
+  <main role="main">
+    <div>
+      <h1 class="line-title">Posts</h1>
+    </div>
+
+    {{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
+    {{ range $paginator.Pages }}
+    <article class="item">
+      <a href="{{ .Permalink }}">
+        <h2>
+          {{ .Title }} {{ if .Draft }}:: DRAFT{{end}}
+        </h2>
+      </a>
+      <div class="item-meta">
+        <time datetime="{{ .Date.Format "2006.01.02" }}" pubdate="">{{ .Date.Format "2006.01.02" }}</time>
+        &nbsp;&nbsp;
+        {{ range .Params.categories }}
+        [<a href="/categories/{{ . | urlize }}">{{ . }}</a>]&nbsp;
+        {{ end }}
+        &nbsp;&nbsp;
+        {{ range .Params.tags }}
+        #<a href="/tags/{{ . | urlize }}">{{ . }}</a>&nbsp;
+        {{ end }}
+      </div>
+      <a href="{{ .Permalink }}">
+        <div class="item-description">
+          <p>{{ .Description }}</p>
+        </div>
+      </a>
+    </article>
+    {{ end }}
+
+    <nav>
+      {{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
+      {{ template "_internal/pagination.html" . }}
+    </nav>
+  </main>
+
+  {{ partial "sidemenu.html" . }}
+</div>
+
+{{ partial "footer.html" . }}

@@ -1,0 +1,31 @@
+<aside class="side">
+  <div class="line-title">
+    <h1>Categories</h1>
+  </div>
+  <div class="side-item">
+    <ul>
+      {{ range $name, $value := $.Site.Taxonomies.categories }}
+      <li>
+        <a href="{{ $.Site.BaseURL }}/categories/{{ $name }}/">
+        {{ $name }} : {{ .Count }}
+        </a>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+
+  <div class="line-title">
+    <h1>Tags</h1>
+  </div>
+  <div class="side-item">
+    <ul>
+      {{ range $name, $value := $.Site.Taxonomies.tags }}
+      <li>
+        <a href="{{ $.Site.BaseURL }}/tags/{{ $name }}/">
+        {{ $name }} : {{ .Count }}
+        </a>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+</aside>

@@ -1,0 +1,41 @@
+{{ partial "header.html" . }}
+
+  <!-- Main Section Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<div class="container">
+  <main role="main">
+    <div class="line-title">
+      <div>
+        <h1>{{ .Title }}</h1>
+      </div>
+      <div class="item-meta">
+        <time datetime="{{ .Date.Format "2006.01.02" }}" pubdate="">{{ .Date.Format "2006.01.02" }}</time>
+        &nbsp;&nbsp;
+        {{ range .Params.categories }}
+        [<a href="/categories/{{ . | urlize }}">{{ . }}</a>]&nbsp;
+        {{ end }}
+        &nbsp;&nbsp;
+        {{ range .Params.tags }}
+        #<a href="/tags/{{ . | urlize }}">{{ . }}</a>&nbsp;
+        {{ end }}
+      </div>
+    </div>
+
+    <article class="item-main">
+      {{ .Content }}
+    </article>
+
+    <nav class="pagination-single">
+      {{ if .Next }}
+        <span class="previous">&larr; <a href="{{ .Next.Permalink }}" rel="prev">{{ .Next.Title }}</a></span>
+      {{ end }}
+      {{ if .Prev }}
+        <span class="next"><a href="{{ .Prev.Permalink }}" rel="next">{{ .Prev.Title }}</a> &rarr;</span>
+      {{ end }}
+    </nav>
+  </main>
+
+  {{ partial "sidemenu.html" . }}
+</div>
+
+{{ partial "footer.html" . }}

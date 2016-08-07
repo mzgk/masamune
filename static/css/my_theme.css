@@ -1,0 +1,179 @@
+body {
+  font-family: Noto Sans JP, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: #434343;
+  letter-spacing: 0.12em;
+  font-size: 16px;
+}
+
+h2 {
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: #1C1C1C;
+  text-decoration: none;
+}
+
+a:focus, a:hover, a:active {
+  color: #4184F3;
+  text-decoration: none;
+}
+
+ul, ol {
+  margin: 1rem 0 1rem 1.5rem;
+}
+
+li {
+  line-height: 1.8rem;
+}
+
+pre, code {
+  font-family: SourceHanCodeJP-Regular, monospace;
+  font-size: 14px;
+  line-height: 1.4rem;
+}
+
+
+/* *** 全体サイズ *** */
+.header-inner, .container{
+  width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* *** 共通 *** */
+.line-title {
+  color: #696969;
+  font-size: 24px;
+  border-left: 4px solid #4184F3;
+  padding: 4px 0 4px 12px;
+  margin: 0 0 20px 0;
+}
+
+
+/* *** ヘッダー *** */
+.header-outer {
+  background-color: #617D8A;
+  height: 120px;
+}
+
+.header-inner {
+  position: relative;
+  top: 20px;
+  bottom: 20px;
+}
+
+.header-inner h1 a {
+  color: #ffffff;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.header-inner h2 {
+  color: #ffffff;
+  font-size: 16px;
+  margin-top: 12px;
+}
+
+
+/* *** メイン *** */
+.container {
+  margin-top: 40px;
+  display: -webkit-flex;
+  display: flex;
+}
+
+main {
+  display: block;
+  -webkit-flex: 1;
+  flex: 1;
+  float: left;
+}
+
+.item {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #dbdbdb;
+}
+
+.item-meta {
+  font-size: 14px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.item-description {
+  color: #696969;
+  font-size: 14px;
+}
+
+.item-main h2 {
+  border-bottom: 2px solid #dbdbdb;
+  margin: 2rem 0 1rem 0;
+  padding-bottom: 0.5rem;
+}
+
+/* *** シングルページのナビゲーション *** */
+nav.pagination-single {
+  padding: 20px 0 20px 0;
+  overflow: hidden;
+}
+
+nav.pagination-single span.previous {
+  float: left;
+  padding: 10px 0 10px 0;
+  max-width: 300px;
+}
+
+nav.pagination-single span.next {
+  float: right;
+  padding: 10px 0 10px 0;
+  max-width: 300px;
+}
+
+nav.pagination-single a {
+  color: #29abe2;
+}
+
+
+/* *** サイドバー *** */
+.side {
+  float: right;
+  margin-left: 40px;
+  width: 180px;
+}
+
+.side-item {
+  margin-bottom: 60px;
+}
+
+.side-item ul, ol {
+  margin-left: 1rem;
+}
+
+.side-item li {
+  list-style: none;
+}
+
+
+/* *** フッター *** */
+footer {
+  margin-top: 80px;
+  margin-bottom: 40px;
+}
+
+.footer-profile {
+  text-align: center;
+}
+
+.profile-image {
+  width: 64px;
+  height: 64px;
+  border-radius: 100%;
+}

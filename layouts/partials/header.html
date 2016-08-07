@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="{{.Site.LanguageCode}}">
+
+<head>
+<title>
+{{ $isHomePage := eq .Title .Site.Title }}{{ .Title }}{{ if eq $isHomePage false }} | {{ .Site.Title }}{{ end }}
+</title>
+<meta content='width=device-width, height=device-height, minimum-scale=1.0, initial-scale=1.0, user-scalable=0' name='viewport'/>
+<meta content='IE=Edge' http-equiv='X-UA-Compatible'/>
+<!-- OGP -->
+<meta content='mzgkworks.com' property='og:title'/>
+<meta content='プログラマーの備忘録。小さな賭けを繰り返せ。' property='og:description'/>
+<meta content='ja_JP' property='og:locale'/>
+<meta content='http://mzgkworks.com' property='og:url'/>
+<meta content='mzgkworks.com' property='og:site_name'/>
+<!-- Google Font -->
+<link href='https://fonts.googleapis.com/css?family=Roboto:400italic,400,500,500italic,700,700italic' rel='stylesheet' type='text/css'/>
+<link href='http://fonts.googleapis.com/earlyaccess/notosansjp.css' rel='stylesheet' type='text/css'/>
+<!-- CSS -->
+<link href="/css/my_reset.css" rel="stylesheet" type='text/css'/>
+<link href="/css/my_theme.css" rel="stylesheet" type='text/css'/>
+<link rel="stylesheet" href="/css/solarized-light.css">
+<!-- RSS -->
+<link href="{{ .Site.BaseURL }}index.xml" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+<link href="{{ .Site.BaseURL }}index.xml" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" />
+</head>
+
+
+<body>
+<header role="banner" class="header-outer">
+  <div class="header-inner">
+    <h1><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
+    {{ with .Site.Params.subtitle }}<h2>{{ . }}</h2>{{ end }}
+  </div>
+</header>
