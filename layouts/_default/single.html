@@ -33,6 +33,8 @@
         <span class="next"><a href="{{ .Prev.Permalink }}" rel="next">{{ .Prev.Title }}</a> &rarr;</span>
       {{ end }}
     </nav>
+
+    {{ partial "disqus.html" . }}
   </main>
 
   {{ partial "sidemenu.html" . }}

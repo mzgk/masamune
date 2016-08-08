@@ -177,3 +177,8 @@ footer {
   height: 64px;
   border-radius: 100%;
 }
+
+/* *** コメント *** */
+#disqus_thread {
+  margin-top: 60px;
+}
