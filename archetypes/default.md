@@ -1,9 +1,9 @@
 +++
-date = "now()"
 draft = true
-slug = ""
+date = "now()"
 categories = [""]
 tags = ["", ""]
 title = ""
 description = ""
+slug = ""
 +++
