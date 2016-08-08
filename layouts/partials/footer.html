@@ -2,7 +2,7 @@
 <footer role="contentinfo">
   <div class="footer-profile">
     {{ with .Site.Params.profile }}<img src="{{ . }}" class="profile-image"><br>{{ end }}
-    {{ .Site.Params.copyright }}
+    <a href="{{ .Site.BaseURL }}/about/about">{{ .Site.Params.copyright }}</a>
   </div>
 </footer>
 

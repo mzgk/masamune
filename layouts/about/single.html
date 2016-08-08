@@ -1,0 +1,24 @@
+{{ partial "header.html" . }}
+
+  <!-- Main Section Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<div class="container">
+  <main role="main">
+    <div class="line-title">
+      <div>
+        <h1>{{ .Title }}</h1>
+      </div>
+      <div class="item-meta">
+        <time datetime="{{ .Date.Format "2006.01.02" }}" pubdate="">{{ .Date.Format "2006.01.02" }}</time>
+      </div>
+    </div>
+
+    <article class="item-main">
+      {{ .Content }}
+    </article>
+  </main>
+
+  {{ partial "sidemenu.html" . }}
+</div>
+
+{{ partial "footer.html" . }}
