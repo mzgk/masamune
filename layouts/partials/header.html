@@ -16,6 +16,7 @@
 <!-- Google Font -->
 <link href='https://fonts.googleapis.com/css?family=Noto+Sans|Monda' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/earlyaccess/notosansjp.css' rel='stylesheet' type='text/css'/>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 <!-- CSS -->
 <link href="/css/my_reset.css" rel="stylesheet" type='text/css'/>
 <link href="/css/my_theme.css" rel="stylesheet" type='text/css'/>
@@ -35,10 +36,21 @@
     </div>
     <div class="header-social">
       <ul>
-      {{ with .Site.Params.twitter }}<li><a href="{{ . }}" target="_blank">Twitter</a></li>{{ end }}
-      {{ with .Site.Params.facebook }}<li><a href="{{ . }}" target="_blank">Facebook</a></li>{{ end }}
-      {{ with .Site.Params.github }}<li><a href="{{ . }}" target="_blank">GitHub</a></li>{{ end }}
-      {{ if .Site.Params.showsRSS }}<li><a href="{{ .Site.BaseURL }}index.xml" type="application/rss+xml" target="_blank">RSS</a></li>{{ end }}
+        <li><a href="{{ .Site.BaseURL }}/about/about">
+          <i class="fa fa-smile-o fa-2x" aria-hidden="true"></i>
+        </a></li>
+        {{ with .Site.Params.twitter }}<li><a href="{{ . }}" target="_blank">
+          <i class="fa fa-twitter fa-2x" aria-hidden="true"></i>
+        </a></li>{{ end }}
+        {{ with .Site.Params.facebook }}<li><a href="{{ . }}" target="_blank">
+          <i class="fa fa-facebook fa-2x" aria-hidden="true"></i>
+        </a></li>{{ end }}
+        {{ with .Site.Params.github }}<li><a href="{{ . }}" target="_blank">
+          <i class="fa fa-github fa-2x" aria-hidden="true"></i>
+        </a></li>{{ end }}
+        {{ if .Site.Params.showsRSS }}<li><a href="{{ .Site.BaseURL }}index.xml" type="application/rss+xml" target="_blank">
+          <i class="fa fa-rss fa-2x" aria-hidden="true"></i>
+        </a></li>{{ end }}
       </ul>
     </div>
   </div>
