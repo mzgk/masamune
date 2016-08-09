@@ -82,6 +82,7 @@ pre, code {
 
 .header-social {
   float: right;
+  margin-top: 42px;
 }
 
 .header-title a {
@@ -101,23 +102,31 @@ pre, code {
   color: #ffffff;
 }
 
-.header-social li {
-  display: inline-block;
-  padding: 0 10px;
-  font-size: 14px;
-  line-height: 1.428;
+.header-social ul {
+  margin: 0;
+  padding: 0;
+}
+.header-social ul:after {
+  content: "";
+  clear: both;
+  display: block;
 }
 
-.header-social li + li {
+.header-social ul li {
+  font-size: 14px;
+  line-height: 1.429;
+  list-style: none;
+  float: left;
+  width: 50px;
   border-left: 1px solid #dbdbdb;
+  padding: 0 10px;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  text-align: center;
 }
 
 .header-social li:first-child {
-  padding-left: 0;
-}
-
-.header-social li:last-child {
-  padding-right: 0;
+  border-left: none;
 }
 
 
