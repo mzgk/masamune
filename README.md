@@ -79,7 +79,7 @@ Open sourced under the [MIT license](https://github.com/mzgk/masamune/blob/maste
 
 ## Author
 
-mzgk
+Takeshi Mizugaki
 
 
 ## Contact
