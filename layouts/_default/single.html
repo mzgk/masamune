@@ -6,7 +6,7 @@
   <main role="main">
     <div class="line-title">
       <div>
-        <h1>{{ .Title }}</h1>
+        <h1>{{ .Title }}{{ if .Draft }}<font style="color:#ED5565;">:: DRAFT</font>{{end}}</h1>
       </div>
       <div class="item-meta">
         <time datetime="{{ .Date.Format "2006.01.02" }}" pubdate="">{{ .Date.Format "2006.01.02" }}</time>
