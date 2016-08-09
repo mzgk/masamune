@@ -8,8 +8,14 @@ body {
   line-height: 1.375;
 }
 
+h1 {
+  font-size: 24px;
+  line-height: 1.25;
+}
+
 h2 {
   font-size: 18px;
+  line-height: 1.333;
 }
 
 a {
@@ -52,9 +58,8 @@ pre, code {
 /* *** 共通 *** */
 .line-title {
   color: #555555;
-  font-size: 24px;
   border-left: 4px solid #7FB4FF;
-  padding: 4px 0 4px 12px;
+  padding: 4px 0 4px 8px;
   margin: 0 0 20px 0;
 }
 
@@ -68,19 +73,51 @@ pre, code {
 .header-inner {
   position: relative;
   top: 22px;
+  height: 98px;
 }
 
-.header-inner h1 a {
+.header-title {
+  float: left;
+}
+
+.header-social {
+  float: right;
+}
+
+.header-title a {
   color: #ffffff;
   font-size: 36px;
   font-weight: bold;
   line-height: 1.187;
 }
 
-.header-inner h2 {
+.header-title p {
   color: #ffffff;
   font-size: 16px;
   margin-top: 12px;
+}
+
+.header-social a {
+  color: #ffffff;
+}
+
+.header-social li {
+  display: inline-block;
+  padding: 0 10px;
+  font-size: 14px;
+  line-height: 1.428;
+}
+
+.header-social li + li {
+  border-left: 1px solid #dbdbdb;
+}
+
+.header-social li:first-child {
+  padding-left: 0;
+}
+
+.header-social li:last-child {
+  padding-right: 0;
 }
 
 

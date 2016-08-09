@@ -29,7 +29,17 @@
 <body>
 <header role="banner" class="header-outer">
   <div class="header-inner">
-    <h1><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
-    {{ with .Site.Params.subtitle }}<h2>{{ . }}</h2>{{ end }}
+    <div class="header-title">
+      <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+      {{ with .Site.Params.subtitle }}<p>{{ . }}</p>{{ end }}
+    </div>
+    <div class="header-social">
+      <ul>
+      {{ with .Site.Params.twitter }}<li><a href="{{ . }}" target="_blank">Twitter</a></li>{{ end }}
+      {{ with .Site.Params.facebook }}<li><a href="{{ . }}" target="_blank">Facebook</a></li>{{ end }}
+      {{ with .Site.Params.github }}<li><a href="{{ . }}" target="_blank">GitHub</a></li>{{ end }}
+      {{ if .Site.Params.showsRSS }}<li><a href="{{ .Site.BaseURL }}index.xml" type="application/rss+xml" target="_blank">RSS</a></li>{{ end }}
+      </ul>
+    </div>
   </div>
 </header>
