@@ -217,6 +217,13 @@ footer {
   text-align: center;
 }
 
+.footer-profile a,
+.footer-profile a:focus,
+.footer-profile a:hover,
+.footer-profile a:active {
+  color: #2974f1;
+}
+
 .profile-image {
   width: 64px;
   height: 64px;
