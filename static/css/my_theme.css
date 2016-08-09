@@ -167,8 +167,16 @@ main {
   border-bottom: 2px solid #dbdbdb;
   margin: 2rem 0 1rem 0;
   padding-bottom: 0.5rem;
+  font-size: 18px;
 }
 
+.item-main h3 {
+  margin: 2rem 0 1rem 0;
+}
+
+.item-main strong {
+  color: #ED5565;
+}
 
 /* *** シングルページのナビゲーション *** */
 nav.pagination-single {
