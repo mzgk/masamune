@@ -1,9 +1,11 @@
 body {
-  font-family: Noto Sans JP, sans-serif;
+  font-family: 'Monda', 'Noto Sans JP', sans-serif;
   -webkit-font-smoothing: antialiased;
-  color: #434343;
-  letter-spacing: 0.12em;
+  color: #333333;
+  letter-spacing: 0.06em;
   font-size: 16px;
+  font-weight: 400;
+  line-height: 1.375;
 }
 
 h2 {
@@ -49,7 +51,7 @@ pre, code {
 
 /* *** 共通 *** */
 .line-title {
-  color: #696969;
+  color: #555555;
   font-size: 24px;
   border-left: 4px solid #7FB4FF;
   padding: 4px 0 4px 12px;
@@ -65,14 +67,14 @@ pre, code {
 
 .header-inner {
   position: relative;
-  top: 20px;
-  bottom: 20px;
+  top: 22px;
 }
 
 .header-inner h1 a {
   color: #ffffff;
   font-size: 36px;
   font-weight: bold;
+  line-height: 1.187;
 }
 
 .header-inner h2 {
