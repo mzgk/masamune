@@ -147,13 +147,13 @@ main {
   font-size: 14px;
   line-height: 1.429;
   margin-top: 12px;
-  margin-bottom: 12px;
 }
 
 .item-description {
   color: #696969;
   font-size: 14px;
   line-height: 1.429;
+  margin-top: 12px;
 }
 
 .item-main h2 {
