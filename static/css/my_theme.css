@@ -51,7 +51,7 @@ pre, code {
 .line-title {
   color: #696969;
   font-size: 24px;
-  border-left: 4px solid #4184F3;
+  border-left: 4px solid #7FB4FF;
   padding: 4px 0 4px 12px;
   margin: 0 0 20px 0;
 }
@@ -59,7 +59,7 @@ pre, code {
 
 /* *** ヘッダー *** */
 .header-outer {
-  background-color: #617D8A;
+  background-color: #434a54;
   height: 120px;
 }
 
