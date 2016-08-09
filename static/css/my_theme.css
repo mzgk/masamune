@@ -5,7 +5,7 @@ body {
   letter-spacing: 0.06em;
   font-size: 16px;
   font-weight: 400;
-  line-height: 1.375;
+  line-height: 1.5;
 }
 
 h1 {
@@ -19,26 +19,18 @@ h2 {
 }
 
 a {
-  color: #2974f1;
+  color: #696969;
   text-decoration: none;
 }
 
 a:visited {
-  color: #1C1C1C;
+  color: #696969;
   text-decoration: none;
 }
 
 a:focus, a:hover, a:active {
   color: #2974f1;
   text-decoration: none;
-}
-
-ul, ol {
-  margin: 1rem 0 1rem 1.5rem;
-}
-
-li {
-  line-height: 1.8rem;
 }
 
 pre, code {
@@ -61,7 +53,7 @@ pre, code {
   color: #555555;
   border-left: 4px solid #7FB4FF;
   padding: 4px 0 4px 8px;
-  margin: 0 0 20px 0;
+  margin: 0 0 16px 0;
 }
 
 
@@ -153,6 +145,7 @@ main {
 
 .item-meta {
   font-size: 14px;
+  line-height: 1.429;
   margin-top: 12px;
   margin-bottom: 12px;
 }
@@ -160,6 +153,7 @@ main {
 .item-description {
   color: #696969;
   font-size: 14px;
+  line-height: 1.429;
 }
 
 .item-main h2 {
@@ -167,6 +161,7 @@ main {
   margin: 2rem 0 1rem 0;
   padding-bottom: 0.5rem;
 }
+
 
 /* *** シングルページのナビゲーション *** */
 nav.pagination-single {
@@ -202,12 +197,13 @@ nav.pagination-single a {
   margin-bottom: 60px;
 }
 
-.side-item ul, ol {
+.side-item ul {
   margin-left: 1rem;
 }
 
 .side-item li {
   list-style: none;
+  margin-bottom: 4px;
 }
 
 
