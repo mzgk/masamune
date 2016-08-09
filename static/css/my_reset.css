@@ -2,7 +2,7 @@ html, body, h1, h2, h3, h4, ul, ol, dl, li, dt, dd, p, div, span, img, a, table,
   margin: 0;
   padding: 0;
   border: 0;
-  font-weight: normal;
+  /*font-weight: normal;*/
   font-size: 100%;
   vertical-align:baseline;
   -webkit-box-sizing: border-box;

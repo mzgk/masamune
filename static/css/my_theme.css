@@ -39,6 +39,13 @@ pre, code {
   line-height: 1.4rem;
 }
 
+ul, ol {
+  margin: 1rem 0 1rem 1.5rem;
+}
+
+li {
+  line-height: 2;
+}
 
 /* *** 全体サイズ *** */
 .header-inner, .container{
@@ -203,6 +210,7 @@ nav.pagination-single a {
 
 .side-item li {
   list-style: none;
+  line-height: 1.5;
   margin-bottom: 4px;
 }
 
