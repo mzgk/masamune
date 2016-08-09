@@ -1,7 +1,12 @@
 
 <footer role="contentinfo">
   <div class="footer-profile">
-    {{ with .Site.Params.profile }}<img src="{{ . }}" class="profile-image"><br>{{ end }}
+    <a href="{{ .Site.BaseURL }}/about/about">
+    {{ with .Site.Params.profile }}
+      <img src="{{ . }}" class="profile-image">
+      <br>
+    {{ end }}
+    </a>
     &copy; {{ .Site.Params.copyrightyear }} <a href="{{ .Site.BaseURL }}/about/about">{{ .Site.Params.copyright }}</a>
   </div>
 </footer>
