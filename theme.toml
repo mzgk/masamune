@@ -3,16 +3,16 @@
 
 name = "Masamune"
 license = "MIT"
-licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE.md"
-description = ""
-homepage = "http://siteforthistheme.com/"
-tags = ["", ""]
+licenselink = "https://github.com/mzgk/masamune/blob/master/LICENSE.md"
+description = "Simple 2 column blog theme."
+homepage = "http://mzgkworks.com/"
+tags = ["blog", "2 column"]
 features = ["", ""]
 min_version = 0.15
 
 [author]
-  name = ""
-  homepage = ""
+  name = "mzgk"
+  homepage = "http://mzgkworks.com"
 
 # If porting an existing theme
 [original]
