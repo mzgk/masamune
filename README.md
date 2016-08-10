@@ -31,23 +31,23 @@ To take full advantage of the features in this theme, you can add variables to y
 The following is the example configuration.
 
 ```@toml
-baseurl = "http://mzgkworks.com"
+baseurl = "your site URL."
 languageCode = "ja-JP"
-title = "mzgkworks.com"
+title = "Site title."
 
 canonifyurls = true
 isCKJLanguage = true
-disqusShortname = "mzgkworks-com"
+disqusShortname = "xxx"
 
 [Params]
-subtitle = "Stack the little bets."
+subtitle = "Subtitle of your site. "
 facebook = ""
-twitter = "https://twitter.com/mzgkworks"
-github = "https://github.com/mzgk"
+twitter = "https://twitter.com/xxx"
+github = "https://github.com/xxx"
 showsRSS = true
 profile = "/images/profile.png"
 copyrightyear = "2016"
-copyright = "mzgk"
+copyright = "your name."
 analytics = ""
 ```
 
@@ -55,7 +55,7 @@ Details of each parameter are as follows.
 
 | Parameter | Required | Comment |
 | :--- | :--- | :--- |
-| baseurl | yes | Enter the title of your site. |
+| baseurl | yes | Enter the URL of your site. |
 | languageCode | yes | Enter the language code of HTML. Example: en-US, ja-JP. |
 | title | yes | Enter the title of your site. |
 | canonifyurls | yes | true |
