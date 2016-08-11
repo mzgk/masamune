@@ -178,6 +178,18 @@ main {
   color: #ED5565;
 }
 
+.item-main a,
+.item-main a:focus,
+.item-main a:hover,
+.item-main a:active {
+  color: #2974f1;
+}
+
+.item-main p {
+  font-size: 90%;
+  line-height: 1.833;
+}
+
 /* *** シングルページのナビゲーション *** */
 nav.pagination-single {
   padding: 20px 0 20px 0;
