@@ -156,6 +156,13 @@ main {
   margin-top: 12px;
 }
 
+.item-meta a,
+.item-meta a:focus,
+.item-meta a:hover,
+.item-meta a:active {
+  color: #2974f1;
+}
+
 .item-description {
   color: #676767;
   font-size: 14px;
