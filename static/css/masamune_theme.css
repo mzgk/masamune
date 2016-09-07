@@ -207,6 +207,34 @@ main {
   line-height: 1.833;
 }
 
+/* *** メインページのナビゲーション *** */
+
+.paginator {
+  padding: 20px 0 20px 0;
+  overflow: hidden;
+}
+
+.prev {
+  float: left;
+  padding: 10px 0 10px 0;
+  max-width: 300px;
+  color: #29abe2;
+}
+
+.more {
+  padding: 10px 0 10px 0;
+  max-width: 300px;
+  color: #29abe2;
+}
+
+.next {
+  float: right;
+  padding: 10px 0 10px 0;
+  max-width: 300px;
+  color: #29abe2;
+}
+
+
 /* *** シングルページのナビゲーション *** */
 nav.pagination-single {
   padding: 20px 0 20px 0;

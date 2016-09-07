@@ -33,9 +33,14 @@
     </article>
     {{ end }}
 
-    <nav>
-      {{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
-      {{ template "_internal/pagination.html" . }}
+    <nav class="paginator">
+      {{ if .Paginator.HasNext }}
+        <a class="prev" rel="prev" href="{{.Paginator.Next.URL}}" ontouchstart="">← Older</a>
+      {{ end }}
+        <!-- <a class="more" href="/post/" ontouchstart="">View all posts</a> -->
+      {{ if .Paginator.HasPrev }}
+        <a class="next" rel="next" href="{{.Paginator.Prev.URL}}" ontouchstart="">Newer →</a>
+      {{ end }}
     </nav>
   </main>
 
