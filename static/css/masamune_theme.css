@@ -57,6 +57,23 @@ li {
   line-height: 2;
 }
 
+
+table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin: 25px 0;
+}
+th {
+  background-color: #eee;
+  border: 1px solid #ccc;
+  padding: 2px 10px;
+}
+td {
+  border: 1px solid #ccc;
+  padding: 2px 10px;
+}
+
 /* *** 全体サイズ *** */
 .header-inner, .container{
   width: 980px;
@@ -152,6 +169,7 @@ main {
   -webkit-flex: 1;
   flex: 1;
   float: left;
+  font-size: 90%;
 }
 
 .item {
@@ -203,7 +221,7 @@ main {
 }
 
 .item-main p {
-  font-size: 90%;
+  /*font-size: 90%;*/
   line-height: 1.833;
 }
 
