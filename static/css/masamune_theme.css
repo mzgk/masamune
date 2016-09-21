@@ -200,13 +200,14 @@ main {
 
 .item-main h2 {
   border-bottom: 2px solid #dbdbdb;
-  margin: 80px 0 28px 0;
+  margin: 40px 0 28px 0;
   padding-bottom: 0.5rem;
   font-size: 20px;
 }
 
-.item-main h2:first-child {
-  margin: 40px 0 28px 0;
+/* 本文の２つ目移行の見出しに対応 */
+.item-main h2 ~ h2 {
+  margin: 80px 0 28px 0;
 }
 
 .item-main h3 {
