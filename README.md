@@ -31,12 +31,12 @@ To take full advantage of the features in this theme, you can add variables to y
 The following is the example configuration.
 
 ```@toml
-baseurl = "http://mzgkworks.com"
+baseurl = "your site url"
 title = "site title"
-languageCode = "ja-JP"
+languageCode = "your site languageCode"
 
 canonifyurls = true
-hasCJKLanguage = true
+hasCJKLanguage = true -> if your site language is Chinese Japanese Korea
 
 auther = "your name"
 theme = "masamune"
@@ -84,15 +84,12 @@ Details of each parameter are as follows.
 
 
 ## License
-
 Open sourced under the [MIT license](https://github.com/mzgk/masamune/blob/master/LICENSE.md).
 
 
 ## Author
-
 mzgk
 
 
 ## Contact
-
 Please contact me via [email](https://github.com/mzgk) / [Twitter](https://twitter.com/mzgkworks) :smile:
