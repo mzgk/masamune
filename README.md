@@ -13,7 +13,7 @@ Masamune is a 2 column simple blog theme for Hugo.
 - Google Analytics
 
 ## Screenshot
-
+![screenshot](/images/screenshot.png)
 
 ## Installation
 Clone this repository to your hugo theme directory.
@@ -95,4 +95,4 @@ mzgk
 
 ## Contact
 
-Please contact me via [email](mzgkworks@gmail.com) / [Twitter](https://twitter.com/mzgkworks) :smile:
+Please contact me via [email](https://github.com/mzgk) / [Twitter](https://twitter.com/mzgkworks) :smile:
