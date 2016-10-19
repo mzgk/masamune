@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+.Footer {
+    color: $color-sub-text;
+    &__head {
+        display: block;
+        margin: 0 auto;
+        width: 64px;
+        height: 64px;
+        border-radius: 100%;
+    }
+    &__body {
+        margin: $size-base-margin*3 0 0 0;
+        text-align: center;
+        @include link-active;
+    }
+}

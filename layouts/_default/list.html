@@ -1,40 +1,58 @@
 {{ partial "header.html" . }}
 
-<div class="container">
-  <main role="main">
-    <div>
-      <h1 class="line-title">{{ .Title }}</h1>
+    <div class="ContentsContainer">
+        <main class="MainContainer">
+            <h1 class="AreaTitle">{{ .Title }}</h1>
+
+            {{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
+            {{ range $paginator.Pages }}
+            <article class="ListItem">
+                <a href="{{ .Permalink }}">
+                    <h2 class="ListItem__head">
+                        {{ .Title }}
+                        {{ if .Draft }}<font style="color:#f23d4c;"> :: DRAFT</font>{{end}}
+                    </h2>
+                </a>
+                <div class="ListItem__body">
+                    <time datetime="{{ .Date.Format "2006-01-01" }}">
+                        {{ .Date.Format "2006.01.02" }}
+                    </time>
+                    &nbsp;&nbsp;
+                    {{ range .Params.categories }}
+                    <span>[<a href="./categories/{{ . | urlize }}">{{ . }}</a>]</span>
+                    {{ end }}
+                    {{ range .Params.tags }}
+                    &nbsp;&nbsp;
+                    <span>#<a href="./tags/{{ . | urlize }}">{{ . }}</a></span>
+                    {{ end }}
+                    <br>
+                    <span>{{ .Params.description }}</span>
+                </div>
+            </article>
+            {{ end }}
+
+            <nav class="Pagenation">
+                {{ if .Paginator.HasNext }}
+                <div class="Pagenation__older">
+                    <a href="{{ .Paginator.Next.URL }}">
+                        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                        Older
+                    </a>
+                </div>
+                {{ end }}
+                {{ if .Paginator.HasPrev }}
+                <div class="Pagenation__newer">
+                    <a href="{{ .Paginator.Prev.URL }}">
+                        Newer
+                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+                {{ end }}
+            </nav>
+        </main>
+
+        {{ partial "sidebar.html" . }}
+
     </div>
 
-    {{ range .Data.Pages }}
-    <article class="item">
-      <a href="{{ .Permalink }}">
-        <h2>
-          {{ .Title }} {{ if .Draft }}<font style="color:#ED5565;"> :: DRAFT</font>{{end}}
-        </h2>
-      </a>
-      <div class="item-meta">
-        <time datetime="{{ .Date.Format "2006.01.02" }}" pubdate="">{{ .Date.Format "2006.01.02" }}</time>
-        &nbsp;&nbsp;
-        {{ range .Params.categories }}
-        [<a href="/categories/{{ . | urlize }}">{{ . }}</a>]&nbsp;
-        {{ end }}
-        &nbsp;&nbsp;
-        {{ range .Params.tags }}
-        #<a href="/tags/{{ . | urlize }}">{{ . }}</a>&nbsp;
-        {{ end }}
-      </div>
-      <a href="{{ .Permalink }}">
-        <div class="item-description">
-          <p>{{ .Description }}</p>
-        </div>
-      </a>
-    </article>
-    {{ end }}
-
-  </main>
-
-  {{ partial "sidemenu.html" . }}
-</div>
-
-{{ partial "footer.html" . }}
+    {{ partial "footer.html" . }}

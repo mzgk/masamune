@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+// ===========================
+// サイトのレイアウトを定義する
+// レイアウト : ２カラム（比率4:1）
+// - HeaderContainer : ヘッダー部分
+// - ContentsContainer : MainContainer,SubContainerを包含する
+// - MainContainer : 左カラム。メインコンテンツ
+// - SubContainer : 右カラム。サイドバー
+// - FooterContainer : フッター
+// ===========================
+
+.HeaderContainer {
+    height: $size-header-height;
+    background: $color-theme-main;
+
+    @include flex-row-nowrap;
+    justify-content: flex-start;
+}
+
+
+.ContentsContainer {
+    max-width: $size-site-width;
+    margin: 0 auto;
+
+    @include flex-row-nowrap;
+    justify-content: flex-start;
+}
+
+
+.MainContainer {
+    flex: 5 1 0;               // Main幅比率 : 5
+}
+
+
+.SubContainer {
+    flex: 1 1 0;                 // Sub幅比率 : 1
+}
+
+
+.FooterContainer {
+    margin: $size-base-margin*20 0 0 0;
+    height: $size-header-height;
+}

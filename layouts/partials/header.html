@@ -1,57 +1,48 @@
 <!DOCTYPE html>
-<html lang="{{.Site.LanguageCode}}">
+<html lang="{{ .Site.LanguageCode }}">
 
 <head>
-<title>
-{{ $isHomePage := eq .Title .Site.Title }}{{ .Title }}{{ if eq $isHomePage false }} | {{ .Site.Title }}{{ end }}
-</title>
-<meta content='width=device-width, height=device-height, minimum-scale=1.0, initial-scale=1.0, user-scalable=0' name='viewport'/>
-<meta content='IE=Edge' http-equiv='X-UA-Compatible'/>
-<!-- OGP -->
-<meta content='mzgkworks.com' property='og:title'/>
-<meta content='プログラマーの備忘録。小さな賭けを繰り返せ。' property='og:description'/>
-<meta content='ja_JP' property='og:locale'/>
-<meta content='http://mzgkworks.com' property='og:url'/>
-<meta content='mzgkworks.com' property='og:site_name'/>
-<!-- Google Font -->
-<link href='https://fonts.googleapis.com/css?family=Monda' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/earlyaccess/notosansjp.css' rel='stylesheet' type='text/css'/>
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
-<!-- CSS -->
-<link href="/css/masamune_reset.css" rel="stylesheet" type='text/css'/>
-<link href="/css/masamune_theme.css" rel="stylesheet" type='text/css'/>
-<link href="/css/monokai.css" rel="stylesheet" type='text/css'/>
-<!-- RSS -->
-<link href="{{ .Site.BaseURL }}index.xml" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
-<link href="{{ .Site.BaseURL }}index.xml" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    {{ with .Site.Params.meta.keywords }}<meta name="keywords" content="{{.}}">{{ end }}
+    {{ $isHomePage := eq .Title .Site.Title }}
+        <meta name="description" content=" {{ .Site.Params.meta.description }}">
+    {{ if eq $isHomePage false }}
+        <meta name="description" content="{{ .Description }}">
+    {{ end }}
+
+    <base href="{{ .Site.BaseURL }}">
+    {{ if .RSSlink }}
+        <link href="{{ . }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+        <link href="{{ . }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" />
+    {{ end }}
+    <link rel="stylesheet" href="./css/masamune.css">
+
+    <title>
+        {{ $isHomePage := eq .Title .Site.Title }}
+        {{ .Title }}
+        {{ if eq $isHomePage false }} | {{ .Site.Title }}{{ end }}
+    </title>
+
+    {{ .Hugo.Generator }}
 </head>
 
-
 <body>
-<header role="banner" class="header-outer">
-  <div class="header-inner">
-    <div class="header-title">
-      <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
-      {{ with .Site.Params.subtitle }}<p>{{ . }}</p>{{ end }}
+    <div class="HeaderContainer">
+        <header class="Header">
+            <div class="Header__head">
+                <h1 class="Header__title"><a href="./index.html">{{ .Site.Title }}</a></h1>
+                <p class="Header__subTitle">{{ .Site.Params.subTitle }}</p>
+            </div>
+            <nav class="Header__body">
+                <ul class="Navi">
+                    <li class="Navi__item"><a href="./about/about" class="fa fa-smile-o"></a></li>
+                    <li class="Navi__item"><a href="{{ .Site.Params.social.github }}" target="_blank" rel="noopener noreferrer" class="fa fa-github"></a></li>
+                    <li class="Navi__item"><a href="{{ .Site.Params.social.twitter }}" target="_blank" rel="noopener noreferrer" class="fa fa-twitter"></a></li>
+                    <li class="Navi__item"><a href="#" class="fa fa-rss"></a></li>
+                </ul>
+            </nav>
+        </header>
     </div>
-    <div class="header-social">
-      <ul>
-        <li><a href="{{ .Site.BaseURL }}/about/about">
-          <i class="fa fa-smile-o fa-2x" aria-hidden="true"></i>
-        </a></li>
-        {{ with .Site.Params.twitter }}<li><a href="{{ . }}" target="_blank">
-          <i class="fa fa-twitter fa-2x" aria-hidden="true"></i>
-        </a></li>{{ end }}
-        {{ with .Site.Params.facebook }}<li><a href="{{ . }}" target="_blank">
-          <i class="fa fa-facebook fa-2x" aria-hidden="true"></i>
-        </a></li>{{ end }}
-        {{ with .Site.Params.github }}<li><a href="{{ . }}" target="_blank">
-          <i class="fa fa-github fa-2x" aria-hidden="true"></i>
-        </a></li>{{ end }}
-        {{ if .Site.Params.showsRSS }}<li><a href="{{ .Site.BaseURL }}index.xml" type="application/rss+xml" target="_blank">
-          <i class="fa fa-rss fa-2x" aria-hidden="true"></i>
-        </a></li>{{ end }}
-      </ul>
-    </div>
-  </div>
-</header>

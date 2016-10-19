@@ -4,15 +4,15 @@
 name = "Masamune"
 license = "MIT"
 licenselink = "https://github.com/mzgk/masamune/blob/master/LICENSE.md"
-description = "Simple 2 column blog theme."
-homepage = "http://mzgkworks.com/"
-tags = ["blog", "2 column"]
+description = "A simple 2column blog theme."
+homepage = "https://github.com/mzgk/masamune"
+tags = ["blog", ""]
 features = ["", ""]
-min_version = 0.15
+min_version = 0.17
 
 [author]
   name = "mzgk"
-  homepage = "http://mzgkworks.com"
+  homepage = "http://mzgkworks.com/"
 
 # If porting an existing theme
 [original]

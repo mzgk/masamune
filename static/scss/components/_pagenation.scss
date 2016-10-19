@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+.Pagenation {
+    margin: $size-base-margin*10 $size-margin-2column 0 $size-left-indent;
+
+    @include flex-row-nowrap;
+    justify-content: space-between;
+    &__older {
+        flex-basis: 45%;
+    }
+    &__newer {
+        flex-basis: 45%;
+        text-align: right;
+    }
+    @include link-active;
+}

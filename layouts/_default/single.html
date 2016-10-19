@@ -1,41 +1,62 @@
 {{ partial "header.html" . }}
 
-<div class="container">
-  <main role="main">
-    <div class="line-title">
-      <div>
-        <h1>{{ .Title }}{{ if .Draft }}<font style="color:#ED5565;"> :: DRAFT</font>{{end}}</h1>
-      </div>
-      <div class="item-meta">
-        <time datetime="{{ .Date.Format "2006.01.02" }}" pubdate="">{{ .Date.Format "2006.01.02" }}</time>
-        &nbsp;&nbsp;
-        {{ range .Params.categories }}
-        [<a href="/categories/{{ . | urlize }}">{{ . }}</a>]&nbsp;
-        {{ end }}
-        &nbsp;&nbsp;
-        {{ range .Params.tags }}
-        #<a href="/tags/{{ . | urlize }}">{{ . }}</a>&nbsp;
-        {{ end }}
-      </div>
+    <div class="ContentsContainer">
+        <main class="MainContainer">
+
+            <article class="PostItem">
+                <div class="PostItem__head">
+                    <div class="PostItem__title">
+                        <h1>
+                            {{ .Title }}
+                            {{ if .Draft }}<font style="color:#f23d4c;"> :: DRAFT</font>{{end}}
+                        </h1>
+                    </div>
+                    <div class="PostItem__meta">
+                        <time datetime="{{ .Date.Format "2006-01-01" }}">
+                            {{ .Date.Format "2006.01.02" }}
+                        </time>
+                        &nbsp;&nbsp;
+                        {{ range .Params.categories }}
+                        <span>[<a href="./categories/{{ . | urlize }}">{{ . }}</a>]</span>
+                        {{ end }}
+                        {{ range .Params.tags }}
+                        &nbsp;&nbsp;
+                        <span>#<a href="./tags/{{ . | urlize }}">{{ . }}</a></span>
+                        {{ end }}
+                    </div>
+                </div>
+
+                <div class="PostItem__body">
+                    {{ .Content }}
+                </div>
+            </article>
+
+            <nav class="Pagenation">
+                <div class="Pagenation__older">
+                    {{ if .PrevInSection }}
+                    <a href="{{ .PrevInSection.Permalink }}">
+                        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                        {{ .PrevInSection.Title }}
+                    </a>
+                    {{ end }}
+                </div>
+                <div class="Pagenation__newer">
+                    {{ if .NextInSection }}
+                    <a href="{{ .NextInSection.Permalink }}">
+                        {{ .NextInSection.Title }}
+                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                    </a>
+                    {{ end }}
+                </div>
+            </nav>
+
+            <div class="Disqus">
+                {{ partial "disqus.html" . }}
+            </div>
+        </main>
+
+        {{ partial "sidebar.html" . }}
+
     </div>
 
-    <article class="item-main">
-      {{ .Content }}
-    </article>
-
-    <nav class="pagination-single">
-      {{ if .Next }}
-        <span class="previous">&larr; <a href="{{ .Next.Permalink }}" rel="prev">{{ .Next.Title }}</a></span>
-      {{ end }}
-      {{ if .Prev }}
-        <span class="next"><a href="{{ .Prev.Permalink }}" rel="next">{{ .Prev.Title }}</a> &rarr;</span>
-      {{ end }}
-    </nav>
-
-    {{ partial "disqus.html" . }}
-  </main>
-
-  {{ partial "sidemenu.html" . }}
-</div>
-
-{{ partial "footer.html" . }}
+    {{ partial "footer.html" . }}

@@ -1,0 +1,34 @@
+<aside class="SubContainer">
+    <h1 class="AreaTitle">Products</h1>
+    <div class="SubItem">
+        <a href="./products/products">
+            <i class="fa fa-apple fa-2x" aria-hidden="true"></i>
+        </a>
+    </div>
+
+    <h1 class="AreaTitle">Categories</h1>
+    <div class="SubItem">
+        <ul>
+            {{ range $name, $value := $.Site.Taxonomies.categories }}
+            <li>
+                <a href="./categories/{{ $name }}/">
+                    {{ $name }} : {{ .Count }}
+                </a>
+            </li>
+            {{ end }}
+        </ul>
+    </div>
+
+    <h1 class="AreaTitle">Tags</h1>
+    <div class="SubItem">
+        <ul>
+            {{ range $name, $value := $.Site.Taxonomies.tags }}
+            <li>
+                <a href="./tags/{{ $name }}/">
+                    {{ $name }} : {{ .Count }}
+                </a>
+            </li>
+            {{ end }}
+        </ul>
+    </div>
+</aside>

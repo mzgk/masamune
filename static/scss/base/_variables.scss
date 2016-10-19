@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+// ===========================
+// Size
+// ===========================
+$size-site-width: 1200px;
+$size-base-margin: 4px;
+$size-margin-2column: $size-base-margin*10;     // カラム間のマージン
+$size-left-indent: $size-base-margin*3;        // 本文の開始位置（タイトルからの字下げ）
+$size-header-height: 128px;
+
+
+// ===========================
+// Color
+// https://www.viget.com/articles/naming-colors
+// http://coliss.com/articles/build-websites/operation/design/color-contrast-for-better-readability.html
+// ===========================
+// $color-theme-main: #0c374d; // Darker Indigo
+$color-theme-main:  #0d3d56;    // Indigo
+$color-main-white:  #fff;
+$color-sub-white:   #dadedf;    // Pearl
+$color-main-text:   #555f61;    // Asher
+$color-sub-text:    #707c80;    // Stone
+// $color-left-border: #43abc9;    // Lighter Alice
+$color-left-border: #24aaef;    // Indigoのモノクロ配列
+$color-bottom-border: #c1c7c9;  // Heather
+$color-active-link: #24aaef;
+$color-hover-link: #f23d4c;     // #24aaefのトライアド

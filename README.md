@@ -31,24 +31,34 @@ To take full advantage of the features in this theme, you can add variables to y
 The following is the example configuration.
 
 ```@toml
-baseurl = "your site URL."
+baseurl = "http://mzgkworks.com"
+title = "site title"
 languageCode = "ja-JP"
-title = "Site title."
 
 canonifyurls = true
-isCKJLanguage = true
-disqusShortname = "xxx"
+hasCJKLanguage = true
 
-[Params]
-subtitle = "Subtitle of your site. "
-facebook = ""
-twitter = "https://twitter.com/xxx"
-github = "https://github.com/xxx"
-showsRSS = true
-profile = "/images/profile.png"
-copyrightyear = "2016"
-copyright = "your name."
-analytics = ""
+auther = "your name"
+theme = "masamune"
+
+# Hugo Built-in Features
+disqusShortname = "xxxxx"
+enableRobotsTXT = true
+
+[params]
+subTitle = "site subtitle"
+copyrightYear = "2016"
+copyrightName = "your name"
+profileImage = "./images/profile.png"
+googleAnalytics = "xxxxxx"
+
+[params.meta]
+description = "meta tag data"
+keywords = "meta tag data"
+
+[params.social]
+github = "https://github.com/xxxx"
+twitter = "https://twitter.com/xxxx"
 ```
 
 Details of each parameter are as follows.
@@ -56,20 +66,21 @@ Details of each parameter are as follows.
 | Parameter | Required | Comment |
 | :--- | :--- | :--- |
 | baseurl | yes | Enter the URL of your site. |
-| languageCode | yes | Enter the language code of HTML. Example: en-US, ja-JP. |
 | title | yes | Enter the title of your site. |
+| languageCode | yes | Enter the language code of HTML. Example: en-US, ja-JP. |
 | canonifyurls | yes | true |
 | isCKJLanguage | no | true |
 | disqusShortname | no | Enter the short name of the disqus. If you do not enter, disqus section is hidden. |
-| subtitle | no | Enter the subtitle of your site. If you do not enter, subtitle is hidden. |
-| facebook | no | Enter the URL of Facebook. If you do not enter, the link is hidden. |
-| twitter | no | Enter the URL of Twitter. If you do not enter, the link is hidden. |
+| enableRobotsTXT | no | true |
+| subTitle | no | Enter the subtitle of your site. If you do not enter, subtitle is hidden. |
+| copyrightYear | no | Enter the copyright year. If you do not enter, copyright display is hidden. |
+| copyrightName | no | Enter the copyright notice. If you do not enter, copyright display is hidden. |
+| profileImage | no | Enter the path to the profile image. If you do not enter, profile section will be hidden. |
+| googleAnalytics | no | Enter the tracking ID of Google analytics. If you do not enter, the analysis will be skipped. |
+| description | no | meta tag data |
+| keywords | no | meta tag data |
 | github | no | Enter the URL of Github. If you do not enter, the link is hidden. |
-| showsRSS | no | Enter true to show the URL of RSS. If you enter false or nothing, the link is hidden. |
-| profile | no | Enter the path to the profile image. If you do not enter, profile section will be hidden. |
-| copyrightyear | no | Enter the copyright year. If you do not enter, copyright display is hidden. |
-| copyright | no | Enter the copyright notice. If you do not enter, copyright display is hidden. |
-| analytics | no | Enter the tracking ID of Google analytics. If you do not enter, the analysis will be skipped. |
+| twitter | no | Enter the URL of Twitter. If you do not enter, the link is hidden. |
 
 
 ## License
@@ -79,9 +90,9 @@ Open sourced under the [MIT license](https://github.com/mzgk/masamune/blob/maste
 
 ## Author
 
-Takeshi Mizugaki
+mzgk
 
 
 ## Contact
 
-Please contact me via [email](https://github.com/mzgk) / [Twitter](https://twitter.com/mzgkworks) :smile:
+Please contact me via [email](mzgkworks@gmail.com) / [Twitter](https://twitter.com/mzgkworks) :smile:

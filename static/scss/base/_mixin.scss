@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+// Flexコンテナ : 横-折り返しなし
+@mixin flex-row-nowrap() {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+@mixin link-active() {
+    a {
+        color: $color-active-link;
+    }
+    a:hover {
+        color: $color-hover-link;
+    }
+}
+
+@mixin border-left() {
+    border-left: 4px solid $color-left-border;
+    padding: 4px 0 4px 8px;
+}
+
+@mixin border-bottom() {
+    border-bottom: 1px solid $color-bottom-border;
+}

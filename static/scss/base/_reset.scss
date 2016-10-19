@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+// sanitize
+@import "./lib/sanitize.3.2.0";
+
+:root {
+    font-family: "Monda", "Noto Sans JP", sans-serif;
+    font-size: 15px;
+    letter-spacing: 0.8pt;
+    color: $color-main-text;
+}
+
+// paddingとborderの幅を要素の幅と高さに含める
+* {
+    box-sizing: border-box;
+}
+
+a {
+    color: $color-main-text;
+    &:hover {
+        color: $color-hover-link;
+    }
+}
+
+li {
+    line-height: 2;
+}
+
+// コードエリアの上下マージン
+pre {
+    margin: 0 0 $size-base-margin*5 0;
+}
+
+// Inlineコード用。Solarized-dark.scssに合わせた
+code {
+    max-width: $size-site-width/6*5 - $size-margin-2column - $size-left-indent;
+    font-family: monospace;
+    font-size: 14px;
+    padding: 0.3em;
+    background: #002b36;
+    color: #839496;
+}
+
+p {
+    text-align: justify;
+    line-height: 1.8em;
+}

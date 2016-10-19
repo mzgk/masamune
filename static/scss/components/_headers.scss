@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+.Header {
+    max-width: $size-site-width;
+    margin: 0 auto;
+    flex: 1 1 auto;
+
+    @include flex-row-nowrap;
+    justify-content: flex-start;
+
+    &__head {
+        flex: 5 1 0; // タイトル幅比率 : 5
+        align-self: center;
+    }
+    &__body {
+        flex: 1 1 0;   // ナビ幅比率 : 1
+        align-self: flex-end;
+    }
+    &__title {
+        font-size: 32px;
+        a {
+            color: $color-main-white;
+        }
+    }
+    &__subTitle {
+        font-size: 16px;
+        color: $color-sub-white;
+    }
+}
+
+.Navi {
+    @include flex-row-nowrap;
+    justify-content: space-between;
+    &__item {
+        font-size: 28px;
+        padding-bottom: $size-base-margin*5;
+        a {
+            color: $color-main-white;
+        }
+    }
+}

@@ -1,50 +1,58 @@
 {{ partial "header.html" . }}
 
-<div class="container">
-  <main role="main">
-    <div>
-      <h1 class="line-title">Posts</h1>
+    <div class="ContentsContainer">
+        <main class="MainContainer">
+            <h1 class="AreaTitle">Posts</h1>
+
+            {{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
+            {{ range $paginator.Pages }}
+            <article class="ListItem">
+                <a href="{{ .Permalink }}">
+                    <h2 class="ListItem__head">
+                        {{ .Title }}
+                        {{ if .Draft }}<font style="color:#f23d4c;"> :: DRAFT</font>{{end}}
+                    </h2>
+                </a>
+                <div class="ListItem__body">
+                    <time datetime="{{ .Date.Format "2006-01-01" }}">
+                        {{ .Date.Format "2006.01.02" }}
+                    </time>
+                    &nbsp;&nbsp;
+                    {{ range .Params.categories }}
+                    <span>[<a href="./categories/{{ . | urlize }}">{{ . }}</a>]</span>
+                    {{ end }}
+                    {{ range .Params.tags }}
+                    &nbsp;&nbsp;
+                    <span>#<a href="./tags/{{ . | urlize }}">{{ . }}</a></span>
+                    {{ end }}
+                    <br>
+                    <span>{{ .Params.description }}</span>
+                </div>
+            </article>
+            {{ end }}
+
+            <nav class="Pagenation">
+                <div class="Pagenation__older">
+                    {{ if .Paginator.HasNext }}
+                    <a href="{{ .Paginator.Next.URL }}">
+                        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                        Older
+                    </a>
+                    {{ end }}
+                </div>
+                <div class="Pagenation__newer">
+                    {{ if .Paginator.HasPrev }}
+                    <a href="{{ .Paginator.Prev.URL }}">
+                        Newer
+                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                    </a>
+                    {{ end }}
+                </div>
+            </nav>
+        </main>
+
+        {{ partial "sidebar.html" . }}
+
     </div>
 
-    {{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
-    {{ range $paginator.Pages }}
-    <article class="item">
-      <a href="{{ .Permalink }}">
-        <h2>
-          {{ .Title }} {{ if .Draft }}<font style="color:#ED5565;"> :: DRAFT</font>{{end}}
-        </h2>
-      </a>
-      <div class="item-meta">
-        <time datetime="{{ .Date.Format "2006.01.02" }}" pubdate="">{{ .Date.Format "2006.01.02" }}</time>
-        &nbsp;&nbsp;
-        {{ range .Params.categories }}
-        [<a href="/categories/{{ . | urlize }}">{{ . }}</a>]&nbsp;
-        {{ end }}
-        &nbsp;&nbsp;
-        {{ range .Params.tags }}
-        #<a href="/tags/{{ . | urlize }}">{{ . }}</a>&nbsp;
-        {{ end }}
-      </div>
-      <a href="{{ .Permalink }}">
-        <div class="item-description">
-          <p>{{ .Params.description }}</p>
-        </div>
-      </a>
-    </article>
-    {{ end }}
-
-    <nav class="paginator">
-      {{ if .Paginator.HasNext }}
-        <a class="prev" rel="prev" href="{{.Paginator.Next.URL}}" ontouchstart="">← Older</a>
-      {{ end }}
-        <!-- <a class="more" href="/post/" ontouchstart="">View all posts</a> -->
-      {{ if .Paginator.HasPrev }}
-        <a class="next" rel="next" href="{{.Paginator.Prev.URL}}" ontouchstart="">Newer →</a>
-      {{ end }}
-    </nav>
-  </main>
-
-  {{ partial "sidemenu.html" . }}
-</div>
-
-{{ partial "footer.html" . }}
+    {{ partial "footer.html" . }}
