@@ -7,123 +7,89 @@
 
     <div class="ContentsContainer">
         <main class="MainContainer">
+
+<!-- iOS領域 : data/products/ios.toml -->
             <article class="PostItem">
                 <div class="PostItem__head">
                     <div class="PostItem__title">
                         <h1>iOS</h1>
                     </div>
                     <div class="PostItem__meta">
-                        <time datetime="2016-10-04">2016.10.17</time>
+                        <time datetime="{{ .Site.Data.products.ios.update }}">
+                            {{ .Site.Data.products.ios.update }}
+                        </time>
                     </div>
                 </div>
                 <div class="PostItem__body">
-                    <h2>%OFF 買い物中に最適な割引計算機</h2>
-                    <div class="Product">
-                        <div class="Product__head">
-                            <a href="https://itunes.apple.com/jp/app/off-maii-wu-zhongni-zui-shina/id1130695945?mt=8">
-                                <img class="Product__app" src="./images/ios_off.png" alt="%OFF" />
-                            </a>
-                        </div>
-                        <div class="Product__body">
-                            <div class="Product__text">
-                                <p>
-                                    忙しい買い物中でも、簡単操作で割引価格を計算できるアプリ。<br>
-                                    シンプルで片手でも操作しやすい画面が特徴。<br>
-                                    <br>
-                                    パッと見でわかる内容と、片手の親指だけでの操作を意識してデザイン。<br>
-                                    見た目が静かで、片手で操作しやすいアプリが欲しくて作成。<br>
-                                    <br>
-                                    Swift<br>
-                                    2016.7.28 : ver1.1.0<br>
-                                </p>
-                            </div>
-                            <div class="Product__link">
-                                <a href="https://itunes.apple.com/jp/app/off-maii-wu-zhongni-zui-shina/id1130695945?mt=8">
-                                    <img src="./images/appstore.png" alt="AppStore" class="AppStoreButton" />
-                                </a>
-                            </div>
-                        </div>
-                    </div>
 
-                    <h2>高山式液肥計算　美味しい作物を育てよう</h2>
+                {{ range .Site.Data.products.ios.product }}
+                    <h2>{{ .title }}</h2>
                     <div class="Product">
                         <div class="Product__head">
-                            <a href="https://itunes.apple.com/jp/app/gao-shan-shi-ye-fei-ji-suan/id1084208250?mt=8">
-                                <img class="Product__app" src="./images/ios_ekihi.png" alt="CalcEkihi" />
+                            <a href="{{ .url }}">
+                                <img class="Product__app" src="{{ .image }}" alt="{{ .alt }}" />
                             </a>
                         </div>
                         <div class="Product__body">
                             <div class="Product__text">
                                 <p>
-                                    静岡県御殿場市で<a href="http://katsumatafarm.com/">健太トマト</a>を栽培している友人のために作ったアプリ。<br>
-                                    化学液肥の計算をスマホでできて、日々の記録を残せる。超ニッチ。<br>
+                                    {{ .description_markdown | markdownify }}
+                                    <br><br>
+                                    {{ .keyword }}
                                     <br>
-                                    操作を画面下部にまとめて、片手で入力操作ができるようにデザイン。<br>
-                                    視認性と操作の感触を意識して作成。<br>
+                                    {{ .release }}
                                     <br>
-                                    Swift, Realm<br>
-                                    2016.7.12 : ver1.1.0<br>
                                 </p>
                             </div>
                             <div class="Product__link">
-                                <a href="https://itunes.apple.com/jp/app/gao-shan-shi-ye-fei-ji-suan/id1084208250?mt=8">
+                                <a href="{{ .url }}">
                                     <img src="./images/appstore.png" alt="AppStore" class="AppStoreButton" />
                                 </a>
                             </div>
                         </div>
                     </div>
+                {{ end }}
+
                 </div>
             </article>
 
+<!-- Web領域 : data/products/web.toml -->
             <article class="PostItem">
                 <div class="PostItem__head">
                     <div class="PostItem__title">
                         <h1>Web</h1>
                     </div>
                     <div class="PostItem__meta">
-                        <time datetime="2016.10.04" pubdate="">2016.10.04</time>
+                        <time datetime="{{ .Site.Data.products.web.update }}">
+                            {{ .Site.Data.products.web.update }}
+                        </time>
                     </div>
                 </div>
                 <div class="PostItem__body">
-                    <h2>かつまたファーム</h2>
-                    <div class="Product">
-                        <div class="Product__head">
-                            <a href="http://katsumatafarm.com/">
-                            <img class="Product__web" src="./images/web_farm.png" alt="farm" />
-                            </a>
-                        </div>
-                        <div class="Product__body">
-                            <div class="Product__text">
-                                <p>
-                                    静岡県御殿場市で<a href="http://katsumatafarm.com/">健太トマト</a>を栽培している友人のために作ったサイト。<br>
-                                    <br>
-                                    最近はテレビで紹介されたりと、何かと話題の若手農業家。<br>
-                                    大学のサークル仲間＆普通より長く通った仲間。<br>
-                                    <br>
-                                    WordPress, VPS<br>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
 
-                    <h2>masamune</h2>
+                {{ range .Site.Data.products.web.product }}
+                    <h2>{{ .title }}</h2>
                     <div class="Product">
                         <div class="Product__head">
-                            <a href="https://github.com/mzgk/masamune">
-                            <img class="Product__web" src="./images/masamune.png" alt="masamune" />
+                            <a href="{{ .url }}">
+                            <img class="Product__web" src="{{ .image }}" alt="{{ .alt }}" />
                             </a>
                         </div>
                         <div class="Product__body">
                             <div class="Product__text">
                                 <p>
-                                    当サイトで使用しているHugo Theme<br>
-                                    シンプルな２カラム形式がなかったので勉強がてら作ってみた。<br>
+                                    {{ .description_markdown | markdownify }}
+                                    <br><br>
+                                    {{ .keyword }}
                                     <br>
-                                    Hugo, GitHub Pages, HTML5, CSS3, Sass<br>
+                                    {{ .release }}
+                                    <br>
                                 </p>
                             </div>
                         </div>
                     </div>
+                {{ end }}
+
                 </div>
             </article>
 
