@@ -1,102 +1,32 @@
 {{/*
     This is Single.html for About.
     Please customize for yourself.
+    data file -> data/about/about.toml
 */}}
 
 {{ partial "header.html" . }}
 
     <div class="ContentsContainer">
         <main class="MainContainer">
+        {{ range .Site.Data.about.about.about }}
             <article class="PostItem">
                 <div class="PostItem__head">
                     <div class="PostItem__title">
-                        <h1>About Me</h1>
+                        <h1>{{ .title }}</h1>
                     </div>
                     <div class="PostItem__meta">
-                        <time datetime="2016-10-17" pubdate="">2016.10.17</time>
+                        <time datetime="{{ .update }}">
+                            {{ .update }}
+                        </time>
                     </div>
                 </div>
                 <div class="PostItem__body">
-
                     <p>
-                        受託メインの中小SIer勤務。<br>
-                        地方銀行向けの金融システム構築に長く従事。<br>
-                        プログラムから設計・要件定義・チームマネジメントまでいろいろ。<br>
-                        <br>
-                        ここ最近は自社サービス及びビジネス立ち上げのため、Mobile・Web・AWS系にシフト。<br>
-                        相変わらずプログラムから設計・要件定義・マネジメントまでいろいろ。<br>
-                        iOS・デザイン・Webフロント・バック・AWSインフラまでのごった煮。<br>
-                        会社が野球球団だとしたら、その中でサッカーをやっているような状況...
+                    {{ .description_markdown | markdownify }}
                     </p>
-
-                    <h2>興味</h2>
-                    <ul>
-                        <li>Mac</li>
-                        <li>iOS（Swift, Xcode）</li>
-                        <li>フォント</li>
-                        <li>欲しいものが作れるようになること</li>
-                        <li>Unix / Linux</li>
-                        <li>Git</li>
-                        <li>デザイン（Mobile, Web）</li>
-                        <li>Atom</li>
-                        <li>Sketch3</li>
-                    </ul>
                 </div>
             </article>
-
-            <article class="PostItem">
-                <div class="PostItem__head">
-                    <div class="PostItem__title">
-                        <h1>About Site</h1>
-                    </div>
-                    <div class="PostItem__meta">
-                        <time datetime="2016-10-17" pubdate="">2016.10.17</time>
-                    </div>
-                </div>
-                <div class="PostItem__body">
-
-                    <p>
-                        自分が覚えたことや出来るようになったことを残しておきたくて開設。<br>
-                        インターネット上に残しておくと、どこからでも参照できるから便利。<br>
-                        EvernoteやQiitaにしなかったのは、Webサイト構築の習得を兼ねてのため。<br>
-                    </p>
-
-                    <h2>求める環境</h2>
-                    <ul>
-                        <li>記事はエディタを使ってmarkdownのテキストファイルベースで作成したい</li>
-                        <li>作成した記事はファイル単位でGit管理したい</li>
-                        <li>環境構築や記事作成までの環境にかかる手間を低くしたい</li>
-                        <li>静的サイトであること</li>
-                        <li>独自ドメインで運用</li>
-                    </ul>
-
-                    <h2>現在の環境（キーワード）</h2>
-                    <ul>
-                        <li><a href="https://gohugo.io/">Hugo</a> : 静的サイトジェネレーター（Go言語）</li>
-                        <li><a href="https://pages.github.com/">GitHub Pages</a> : Gitホスティングサービス。プロジェクト形式（docディレクトリ）</li>
-                        <li><a href="http://www.apple.com/jp/macbook-pro/">MacBook Pro</a></li>
-                        <li><a href="https://atom.io/">Atom</a> : GitHub社製のエディタ</li>
-                        <li><a href="https://www.iterm2.com/">iTerm2</a>（bash）: Terminal Emulator</li>
-                        <li><a href="https://git-scm.com/">Git</a></li>
-                        <li>HTML5</li>
-                        <li>CSS3</li>
-                        <li><a href="http://sass-lang.com/">Sass</a> : SCSS記法・RubyGemでコンパイル</li>
-                        <li><a href="https://github.com/mzgk/masamune">masamune</a> : Hugo Theme。自作</li>
-                    </ul>
-
-                    <h2>今までの遍歴</h2>
-                    <ul>
-                        <li>Hatena::Diary</li>
-                        <li>WordPress + さくらVPS</li>
-                        <li>Octopress + GitHub Pages :
-                            <a href="http://mzgk.github.io/">http://mzgk.github.io/</a>
-                        </li>
-                        <li>Hatena Blog :
-                            <a href="http://mzgkworks.hateblo.jp/">http://mzgkworks.hateblo.jp/</a>
-                        </li>
-                    </ul>
-                </div>
-            </article>
+        {{ end }}
 
             <div class="Disqus">
                 {{ partial "disqus.html" . }}
