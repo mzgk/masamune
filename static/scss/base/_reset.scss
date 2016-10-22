@@ -6,8 +6,9 @@
 :root {
     font-family: "Monda", "Noto Sans JP", sans-serif;
     font-size: 15px;
-    letter-spacing: 0.8pt;
+    letter-spacing: 0.6pt;
     color: $color-main-text;
+    // -webkit-font-smoothing: antialiased;
 }
 
 // paddingとborderの幅を要素の幅と高さに含める

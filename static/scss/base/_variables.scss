@@ -5,7 +5,7 @@
 // ===========================
 $size-site-width: 1200px;
 $size-base-margin: 4px;
-$size-margin-2column: $size-base-margin*10;     // カラム間のマージン
+$size-margin-2column: $size-base-margin*15;     // カラム間のマージン
 $size-left-indent: $size-base-margin*3;        // 本文の開始位置（タイトルからの字下げ）
 $size-header-height: 128px;
 
@@ -19,10 +19,21 @@ $size-header-height: 128px;
 $color-theme-main:  #0d3d56;    // Indigo
 $color-main-white:  #fff;
 $color-sub-white:   #dadedf;    // Pearl
+
 $color-main-text:   #555f61;    // Asher
 $color-sub-text:    #707c80;    // Stone
+
 // $color-left-border: #43abc9;    // Lighter Alice
 $color-left-border: #24aaef;    // Indigoのモノクロ配列
-$color-bottom-border: #c1c7c9;  // Heather
+// $color-bottom-border: #c1c7c9;  // Heather
+$color-bottom-border: #eee;
+$color-table-border: #c1c7c9;
+
 $color-active-link: #24aaef;
 $color-hover-link: #f23d4c;     // #24aaefのトライアド
+
+// Google Developers Blog
+// $color-main-text:   rgba(0,0,0,.87);
+// $color-sub-text:    rgba(0,0,0,.54);
+// $color-active-link: #4184f3;
+// $color-bottom-border: #eee;
