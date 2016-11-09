@@ -62,4 +62,10 @@
         border: 1px solid $color-table-border;
         padding: 4px 12px;
     }
+
+    blockquote {
+        font-style: italic;
+        background-color: #f6f6f6;
+        padding: 1rem;
+    }
 }
